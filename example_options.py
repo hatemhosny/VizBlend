@@ -1,13 +1,5 @@
 import plotly.graph_objects as go
-from figure_defaults import figure_defaults
-
-def figure_defaults_wrapper(fig, options):
-    @figure_defaults()
-    def wrapper_figure_defaults(fig, options):
-        return fig
-
-    styled_fig = wrapper_figure_defaults(fig, options)
-    return styled_fig
+from reporting import figure_defaults_wrapper, create_report
 
 # ===========================================================================
 def bar_graph():
@@ -41,3 +33,17 @@ def box_graph():
     fig = figure_defaults_wrapper(fig, box_options)
     return fig
 # ===========================================================================
+
+
+if __name__ == "__main__":
+    bar_figure = bar_graph()
+    scatter_figure = scatter_graph()
+    pie_figure = pie_graph()
+    boxplot_figure = box_graph()
+    figures = [
+        bar_figure,
+        scatter_figure,
+        pie_figure,
+        boxplot_figure,
+    ]
+    create_report(figures=figures, report_title="Example Report")

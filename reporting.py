@@ -1,5 +1,4 @@
 from figure_defaults import figure_defaults
-from example_options import bar_graph, pie_graph, scatter_graph, box_graph
 
 def figure_defaults_wrapper(fig, options):
     @figure_defaults()
@@ -11,7 +10,7 @@ def figure_defaults_wrapper(fig, options):
 
 
 
-def create_report(figures):
+def create_report(figures: list, report_title: str):
     divs = []
     for i, figure in enumerate(figures):
         div = figure.to_html(
@@ -50,9 +49,19 @@ def create_report(figures):
                 height: 100vh !important;
                 width: 100vw !important;
             }}
+            .report-title {{
+                font-weight: bold;
+                font-size: 60px;
+                text-align: center;
+                margin-top: 40vh;
+            }}
         </style>
     </head>
     <body>
+        <!-- Initial report title -->
+        <div id="page0" class="page active">
+            <div class="report-title">{report_name}</div>
+        </div>
         {divs}
         <script>
             var currentPage = 0;
@@ -90,23 +99,8 @@ def create_report(figures):
     </body>
     </html>
     """
-    html_content = html_template.format(divs="\n".join(divs), total_pages=len(divs), report_name="VizBlend")
+    html_content = html_template.format(divs="\n".join(divs), total_pages=len(divs), report_name=report_title)
     
     with open("report_template.html", "w") as report_file:
         report_file.write(html_content)
     return report_file
-
-
-
-if __name__ == "__main__":
-    bar_figure = bar_graph()
-    scatter_figure = scatter_graph()
-    pie_figure = pie_graph()
-    boxplot_figure = box_graph()
-    figures = [
-        bar_figure,
-        scatter_figure,
-        pie_figure,
-        boxplot_figure,
-    ]
-    create_report(figures=figures)
