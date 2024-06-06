@@ -28,7 +28,7 @@ def create_report(figures: list, report_title: str):
         div = figure.to_html(
             full_html=False, include_plotlyjs="cdn", config={"displayModeBar": False}
         )
-        divs.append(f'<div id="page{i}" class="page">{div}</div>')
+        divs.append(div)
 
     # Set up the Jinja2 environment
     env = Environment(loader=FileSystemLoader("templates"))
