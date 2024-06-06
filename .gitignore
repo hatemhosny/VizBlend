@@ -1,4 +1,4 @@
 *.csv
-report_template2.html
+*.html
 .vscode/
 __pycache__/
