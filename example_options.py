@@ -1,6 +1,7 @@
 import plotly.graph_objects as go
 from reporting import figure_defaults_wrapper, create_report
 
+
 # ===========================================================================
 def bar_graph():
     bar_options = {"title": "Bar Graph"}
@@ -9,6 +10,8 @@ def bar_graph():
     fig = go.Figure(go.Bar(x=x, y=y, text=y))
     fig = figure_defaults_wrapper(fig, bar_options)
     return fig
+
+
 # ===========================================================================
 def scatter_graph():
     scatter_options = {"title": "Scatter Graph"}
@@ -17,6 +20,8 @@ def scatter_graph():
     fig = go.Figure(go.Scatter(x=x_scatter, y=y_scatter, mode="lines+markers"))
     fig = figure_defaults_wrapper(fig, scatter_options)
     return fig
+
+
 # ===========================================================================
 def pie_graph():
     pie_options = {"title": "Pie Graph"}
@@ -25,6 +30,8 @@ def pie_graph():
     fig = go.Figure(go.Pie(labels=labels, values=values))
     fig = figure_defaults_wrapper(fig, pie_options)
     return fig
+
+
 # ===========================================================================
 def box_graph():
     box_options = {"title": "Box Graph"}
@@ -32,6 +39,8 @@ def box_graph():
     fig = go.Figure(go.Box(y=data_box, boxpoints="all", jitter=0.3))
     fig = figure_defaults_wrapper(fig, box_options)
     return fig
+
+
 # ===========================================================================
 
 

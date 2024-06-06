@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{{ report_name }}</title>
+    <style>
+      body,
+      html {
+        margin: 0;
+        padding: 0;
+        height: 100%;
+        width: 100%;
+        overflow: hidden;
+      }
+      .page {
+        display: none;
+        height: 100vh;
+        width: 100vw;
+      }
+      .active {
+        display: block;
+      }
+      .plotly-graph-div {
+        height: 100vh !important;
+        width: 100vw !important;
+      }
+      .report-title {
+        font-weight: bold;
+        font-size: 60px;
+        text-align: center;
+        margin-top: 40vh;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Initial report title -->
+    <div id="page0" class="page active">
+      <div class="report-title">{{ report_name }}</div>
+    </div>
+    {% for div in divs %}
+    <div id="page{{ loop.index }}" class="page">{{ div|safe }}</div>
+    {% endfor %}
+    <script>
+      var currentPage = 0;
+      var totalPages = {{ total_pages }};
+      function showPage(page) {
+          document.querySelectorAll('.page').forEach(function(div, index) {
+              div.classList.remove('active');
+              if (index === page) {
+                  div.classList.add('active');
+              }
+          });
+      }
+      function prevPage() {
+          if (currentPage > 0) {
+              currentPage--;
+              showPage(currentPage);
+          }
+      }
+      function nextPage() {
+          if (currentPage < totalPages - 1) {
+              currentPage++;
+              showPage(currentPage);
+          }
+      }
+      document.addEventListener('keydown', function(event) {
+          if (event.key === 'ArrowLeft') {
+              prevPage();
+          } else if (event.key === 'ArrowRight') {
+              nextPage();
+          }
+      });
+
+      showPage(currentPage);
+    </script>
+  </body>
+</html>
