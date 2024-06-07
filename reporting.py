@@ -43,7 +43,7 @@ def create_report(figures: list, report_title: str):
     output_dir = "./"
     if not os.path.exists(output_dir):
         os.makedirs(output_dir)
-    output_file = os.path.join(output_dir, "report.html")
+    output_file = os.path.join(output_dir, f"{report_title}.html")
     with open(output_file, "w") as report_file:
         report_file.write(html_content)
     return report_file

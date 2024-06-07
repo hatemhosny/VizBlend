@@ -1,4 +1,6 @@
 *.csv
-report.html
+*.xlsx
+tof.py
+Tetralogy of Fallot Report.html
 .vscode/
 __pycache__/
