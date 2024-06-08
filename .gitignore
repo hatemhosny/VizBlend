@@ -2,5 +2,6 @@
 *.xlsx
 tof.py
 Tetralogy of Fallot Report.html
+Example Report.html
 .vscode/
 __pycache__/
