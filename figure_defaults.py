@@ -186,6 +186,8 @@ def figure_defaults(
             if trace.type == "treemap":
                 trace.update(hovertemplate="%{label}<br>Count: %{value}")
                 trace.update(root_color="white")
+            if trace.type == "indicator":
+                fig.update_layout(title=options["title"])
             return trace
 
         fig.for_each_trace(apply_trace_defaults)
