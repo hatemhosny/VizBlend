@@ -36,6 +36,7 @@ class CreateReport:
             div = figure.to_html(
                 full_html=False,
                 include_plotlyjs="cdn",
+                # include_plotlyjs=True, # loading plotly.js in the exported HTML file so that the file can open and reload offline
                 config={"displayModeBar": False},
             )
             divs.append(div)
@@ -54,6 +55,6 @@ class CreateReport:
         if not os.path.exists(output_dir):
             os.makedirs(output_dir)
         output_file = os.path.join(output_dir, f"{self.report_title}.html")
-        with open(output_file, "w") as report_file:
+        with open(output_file, "w", encoding="utf-8") as report_file:
             report_file.write(html_content)
         return output_file
