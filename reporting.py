@@ -35,8 +35,7 @@ class CreateReport:
         for i, figure in enumerate(self.figures):
             div = figure.to_html(
                 full_html=False,
-                include_plotlyjs="cdn",
-                # include_plotlyjs=True, # loading plotly.js in the exported HTML file so that the file can open and reload offline
+                include_plotlyjs=False,
                 config={"displayModeBar": False},
             )
             divs.append(div)
