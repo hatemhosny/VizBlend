@@ -1,5 +1,5 @@
 import os
-from figure_defaults import figure_defaults
+from vizblend.figure_defaults import figure_defaults
 from jinja2 import Environment, FileSystemLoader
 
 
