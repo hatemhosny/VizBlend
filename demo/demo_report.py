@@ -1,5 +1,5 @@
 import plotly.graph_objects as go
-from reporting import CreateReport
+from vizblend.create_report import CreateReport
 
 # from reporting import figure_defaults_wrapper, blend_graphs_to_html
 
