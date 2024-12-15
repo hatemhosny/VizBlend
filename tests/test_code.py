@@ -28,6 +28,7 @@ def test_add_regular_figure(sample_report, sample_figure):
 
 def test_add_figure_from_function(sample_report):
     """Test adding a figure returned by a function."""
+
     def example_graph(options):
         fig = go.Figure(go.Pie(labels=["A", "B", "C"], values=[30, 20, 50]))
         fig.update_layout(title=options["title"])
@@ -77,23 +78,26 @@ def test_empty_figures_list(sample_report, tmpdir):
         content = f.read()
         assert "Test Report" in content
 
+
 def test_invalid_add_figure(sample_report):
     """Test adding invalid objects to the report."""
     with pytest.raises(Exception):  # Adjust the exception type if specific
         sample_report.add_figure(123, {"title": "Invalid Figure"})
+
 
 def test_large_number_of_figures(sample_report, tmpdir):
     """Test blending a large number of figures."""
     for i in range(100):  # Add 100 figures
         fig = go.Figure(go.Bar(x=[i], y=[i]))
         sample_report.add_figure(fig, {"title": f"Figure {i}"})
-    
+
     output_file = sample_report.blend_graphs_to_html()
     assert os.path.isfile(output_file)
 
     with open(output_file, "r", encoding="utf-8") as f:
         content = f.read()
         assert "Figure 99" in content  # Check if the last figure's title exists
+
 
 def test_valid_html_output(sample_report, sample_figure, tmpdir):
     """Test the validity of the generated HTML."""
@@ -103,9 +107,10 @@ def test_valid_html_output(sample_report, sample_figure, tmpdir):
 
     with open(output_file, "r", encoding="utf-8") as f:
         soup = BeautifulSoup(f, "html.parser")
-    
+
     assert soup.find("div", {"class": "page"}) is not None  # Check for page divs
     assert soup.find("title").text == "Test Report"  # Check the title
+
 
 def test_integration_user_workflow():
     """Integration test simulating a user workflow of adding figures and generating a report."""
@@ -122,7 +127,9 @@ def test_integration_user_workflow():
     report.add_figure(scatter_fig, {"title": "Scatter Plot"})
 
     # Pie chart
-    pie_fig = go.Figure(go.Pie(labels=["Apple", "Banana", "Cherry"], values=[30, 40, 30]))
+    pie_fig = go.Figure(
+        go.Pie(labels=["Apple", "Banana", "Cherry"], values=[30, 40, 30])
+    )
     report.add_figure(pie_fig, {"title": "Pie Chart"})
 
     # Step 3: Generate the HTML report
