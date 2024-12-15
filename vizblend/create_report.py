@@ -35,7 +35,7 @@ class CreateReport:
         for i, figure in enumerate(self.figures):
             div = figure.to_html(
                 full_html=False,
-                include_plotlyjs=False,
+                include_plotlyjs=True,
                 config={"displayModeBar": False},
             )
             divs.append(div)
