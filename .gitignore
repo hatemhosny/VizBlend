@@ -8,3 +8,7 @@ demo.mp4
 example_options2.py
 .vscode/
 __pycache__/
+build/
+dist/
+*.egg-info/
+build-vizblend
