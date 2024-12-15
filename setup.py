@@ -1,8 +1,8 @@
 from setuptools import setup, find_packages
 
 setup(
-    name="vizblend",  # Name of your package
-    version="1.0.0",  # Initial version
+    name="vizblend",
+    version="1.0.0",
     author="Mahmoud Housam",
     author_email="mahmoudhousam60@gmail.com",
     description="A Python package to generate HTML reports from Plotly figures using Jinja2 templates.",
