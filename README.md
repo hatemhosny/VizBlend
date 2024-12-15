@@ -1,4 +1,4 @@
-# VisBlend
+# VizBlend
 
 VizBlend is a Python package that simplifies the process of creating interactive analytical reports by consolidating Plotly figures into a single HTML file. It’s designed to function like a modern PowerPoint presentation but with the power of stunning and interactive data visualizations.
 
