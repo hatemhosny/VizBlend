@@ -6,10 +6,10 @@ setup(
     author="Mahmoud Housam",
     author_email="mahmoudhousam60@gmail.com",
     description="A Python package to generate HTML reports from Plotly figures using Jinja2 templates.",
-    long_description=open("README.md").read(), 
-    long_description_content_type="text/markdown", 
+    long_description=open("README.md").read(),
+    long_description_content_type="text/markdown",
     url="https://github.com/MahmoudHousam/VizBlend",
-    packages=find_packages(), 
+    packages=find_packages(),
     include_package_data=True,
     install_requires=[
         "plotly==5.24.1",
@@ -19,7 +19,7 @@ setup(
         "jinja2==3.1.4",
         "bs4==0.0.2",
     ],
-    classifiers=[ 
+    classifiers=[
         "Programming Language :: Python :: 3.9",
         "Operating System :: OS Independent",
         "Development Status :: 4 - Beta",
