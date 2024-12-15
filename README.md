@@ -34,3 +34,5 @@ Besides its main job, this repo intends to teach aspiring data analysts or even 
     * [Automated Python Unit Testing Made Easy with Pytest and GitHub Actions](https://pytest-with-eric.com/integrations/pytest-github-actions/)
 
     * [Building and testing Python | Official GitHub Actions Docs](https://docs.github.com/en/actions/use-cases-and-examples/building-and-testing/building-and-testing-python)
+
+    * [pypi-publish | GitHub Action](https://github.com/marketplace/actions/pypi-publish)
