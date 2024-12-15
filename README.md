@@ -18,7 +18,7 @@ pip install vizBlend
 
 # Learning Purpose
 
-While this repo is open-sourced for any developer, it intends to teach aspiring data analysts or even data scientists who cannot have full control over their coding cycle. With a simple mission: create visualizations and append them in one interactive report, you can take your learning curve up to include useful skills:
+Besides its main job, this repo intends to teach aspiring data analysts or even data scientists who cannot have full control over their coding cycle. With a simple mission: create visualizations and append them in one interactive report, you can take your learning curve up to include useful skills:
 * Write unit and integration tests with edge cases to ensure your code is not error-prone.
 
 * Write CI/CD workflows to run on every push or pull request to ensure the newly committed code is compatible enough.
