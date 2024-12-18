@@ -1,5 +1,7 @@
 # VizBlend
 
+![PyPI Version](https://img.shields.io/pypi/v/vizblend) ![License](https://img.shields.io/pypi/l/vizblend) ![Build Status](https://github.com/MahmoudHousam/VizBlend/actions/workflows/publish.yml/badge.svg) ![Code Style: Black](https://img.shields.io/badge/code%20style-black-000000.svg) ![Downloads](https://img.shields.io/pypi/dm/vizblend) 
+
 VizBlend is a Python package that simplifies the process of creating interactive analytical reports by consolidating Plotly figures into a single HTML file. It’s designed to function like a modern PowerPoint presentation but with the power of stunning and interactive data visualizations.
 
 Whether you’re a data analyst, scientist, or developer, VizBlend streamlines the visualization workflow and enhances collaboration.
